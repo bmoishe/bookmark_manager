@@ -15,4 +15,6 @@ User story1 - As a user
 I want to see a list of bookmarks
 so that I can follow the link I want
 
-User story2 - As a user I want to
+User story2 - As a time-pressed user
+So that I can save a website
+I would like to add the site's address and title to bookmark manager
