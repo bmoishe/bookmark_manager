@@ -1,0 +1,13 @@
+<form action='/add' method="post">
+  <label for="url">
+    url
+    <input type="text" name="url">
+  </label>
+  <input type="submit" value="Add">
+</form>
+
+<% if @url != nil %>
+  <%= @url %> was added to your bookmarks.
+<% end %>
+
+<a href='/bookmarks'><button>View All Bookmarks</button></a>
