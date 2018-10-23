@@ -15,6 +15,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 ENV['RACK_ENV'] = 'test'
+ENV['test_database'] = 'bookmark_manager_test'
 # require our Sinatra app file
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
@@ -22,10 +23,13 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'features/web_helpers'
-
+require 'setup_database'
 # tell Capybara about our app class
 Capybara.app = BookmarkManager
 RSpec.configure do |config|
+  config.before(:each) do
+    setup_database
+  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
